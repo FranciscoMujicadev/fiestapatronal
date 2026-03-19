@@ -111,6 +111,73 @@
             transform: scale(1.05);
         }
 
+        /* Hamburger Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            z-index: 101;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: var(--orange-hot);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 16px 20px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: 0;
+                top: 70px;
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                gap: 20px;
+                flex-direction: column;
+                background-color: var(--cream);
+                width: 100%;
+                text-align: center;
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                padding: 30px 0;
+                z-index: 99;
+                border-bottom: 2px solid var(--yellow-sun);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            /* Hamburger Animation */
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+        }
+
         .hero {
             min-height: 100vh;
             display: flex;
@@ -798,6 +865,11 @@
 
     <nav class="navbar" id="navbar">
         <div class="nav-brand">🎪 SAN MARCOS <span>2026</span></div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="nav-links">
             <a href="#programa">Programa</a>
             <a href="#lineup">Lineup</a>
@@ -1415,6 +1487,24 @@
         const c = document.getElementById('particles'), cols = ['#F5C040', '#E8651A', '#2DB89E', '#FFF', '#C0392B']; for (let i = 0; i < 20; i++) { const p = document.createElement('div'); p.className = 'particle'; p.style.left = Math.random() * 100 + '%'; p.style.bottom = '-10px'; p.style.background = cols[~~(Math.random() * cols.length)]; p.style.width = (4 + Math.random() * 8) + 'px'; p.style.height = p.style.width; p.style.animationDelay = Math.random() * 4 + 's'; p.style.animationDuration = (3 + Math.random() * 3) + 's'; c.appendChild(p) }
         document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth' }) }) });
         const obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)' } }) }, { threshold: 0.12 }); document.querySelectorAll('.zigzag-step').forEach(s => { s.style.opacity = '0'; s.style.transform = 'translateY(40px)'; s.style.transition = 'opacity 0.8s ease,transform 0.8s ease'; obs.observe(s) });
+
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksItems = document.querySelectorAll('.nav-links a');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked (mobile)
+        navLinksItems.forEach(item => {
+            item.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
     </script>
 </body>
 
