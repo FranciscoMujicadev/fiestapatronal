@@ -639,7 +639,7 @@
         .sponsor-card {
             background: var(--cream);
             border-radius: 16px;
-            padding: 28px 36px;
+            padding: 26px 36px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -663,6 +663,13 @@
         .sponsor-emoji {
             font-size: 2.5rem;
             margin-bottom: 10px;
+        }
+
+        .sponsor-logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: 10px;
+            object-fit: contain;
         }
 
         .sponsor-name {
@@ -942,7 +949,7 @@
         </div>
         <div class="nav-links">
             <a href="#programa">Programa</a>
-            <a href="#lineup">Lineup</a>
+            <!-- <a href="#lineup">Lineup</a> -->
             <a href="#patrocinadores">Patrocinadores</a>
         </div>
     </nav>
@@ -1667,56 +1674,26 @@
         </div>
     </section>
 
-    <!--
 
-    LINEUP 
-
-    <section class="section lineup" id="lineup">
-        <div class="section-header">
-            <div class="section-tag" style="color: var(--yellow-sun);">¿Quién toca?</div>
-            <h2 class="section-title">LINEUP <span>MUSICAL</span></h2>
-        </div>
-        <div class="lineup-grid">
-            <div class="lineup-card headliner"><span class="lineup-emoji">⭐</span>
-                <div class="lineup-name">ARTISTA ESTELAR</div>
-                <div class="lineup-genre">Próximamente — Por confirmar</div>
-                <div class="lineup-time-badge">🎤 Viernes 25 — 10:00 PM</div>
-            </div>
-            <div class="lineup-card"><span class="lineup-emoji">🎺</span>
-                <div class="lineup-name">Banda Regional</div>
-                <div class="lineup-genre">Banda Sinaloense</div>
-                <div class="lineup-time-badge">Sábado 26 — 9:00 PM</div>
-            </div>
-            <div class="lineup-card"><span class="lineup-emoji">🎸</span>
-                <div class="lineup-name">Grupo Norteño</div>
-                <div class="lineup-genre">Norteño / Corridos</div>
-                <div class="lineup-time-badge">Domingo 27 — 9:00 PM</div>
-            </div>
-            <div class="lineup-card"><span class="lineup-emoji">🎵</span>
-                <div class="lineup-name">Sonido Local</div>
-                <div class="lineup-genre">Cumbia / Tropical</div>
-                <div class="lineup-time-badge">Viernes 25 — 7:00 PM</div>
-            </div>
-            <div class="lineup-card"><span class="lineup-emoji">💃</span>
-                <div class="lineup-name">Grupo Versátil</div>
-                <div class="lineup-genre">Versátil / Covers</div>
-                <div class="lineup-time-badge">Sábado 26 — 6:00 PM</div>
-            </div>
-            <div class="lineup-card"><span class="lineup-emoji">🎻</span>
-                <div class="lineup-name">Mariachi</div>
-                <div class="lineup-genre">Mariachi Tradicional</div>
-                <div class="lineup-time-badge">Viernes 25 — 6:00 AM</div>
-            </div>
-        </div>
-    </section>
-
-     PATROCINADORES 
     <section class="section patrocinadores" id="patrocinadores">
         <div class="section-header">
             <div class="section-tag">Gracias a quienes lo hacen posible</div>
             <h2 class="section-title">NUESTROS <span>PATROCINADORES</span></h2>
         </div>
         <div class="sponsors-grid">
+            <div class="sponsor-card gold">
+                <img src="assets/loyalty-solutions.png" alt="Loyalty Solutions" class="sponsor-logo">
+                <div class="sponsor-name">Loyalty Solutions</div>
+                <div class="sponsor-tier gold">ORO</div>
+            </div>
+
+            <div class="sponsor-card gold">
+                <img src="assets/promedic.png" alt="Promedic" class="sponsor-logo">
+                <div class="sponsor-name">Promedic</div>
+                <div class="sponsor-tier gold">ORO</div>
+            </div>
+
+            <!--
             <div class="sponsor-card gold">
                 <div class="sponsor-emoji">🏗️</div>
                 <div class="sponsor-name">Materiales El Cerro</div>
@@ -1757,17 +1734,63 @@
                 <div class="sponsor-name">Taller Mecánico Juárez</div>
                 <div class="sponsor-tier bronze">BRONCE</div>
             </div>
+            -->
         </div>
     </section>
+
+
+
+    <!--
+    LINEUP 
+
+    <section class="section lineup" id="lineup">
+        <div class="section-header">
+            <div class="section-tag" style="color: var(--yellow-sun);">¿Quién toca?</div>
+            <h2 class="section-title">LINEUP <span>MUSICAL</span></h2>
+        </div>
+        <div class="lineup-grid">
+            <div class="lineup-card headliner"><span class="lineup-emoji">⭐</span>
+                <div class="lineup-name">ARTISTA ESTELAR</div>
+                <div class="lineup-genre">Próximamente — Por confirmar</div>
+                <div class="lineup-time-badge">🎤 Viernes 25 — 10:00 PM</div>
+            </div>
+            <div class="lineup-card"><span class="lineup-emoji">🎺</span>
+                <div class="lineup-name">Banda Regional</div>
+                <div class="lineup-genre">Banda Sinaloense</div>
+                <div class="lineup-time-badge">Sábado 26 — 9:00 PM</div>
+            </div>
+            <div class="lineup-card"><span class="lineup-emoji">🎸</span>
+                <div class="lineup-name">Grupo Norteño</div>
+                <div class="lineup-genre">Norteño / Corridos</div>
+                <div class="lineup-time-badge">Domingo 27 — 9:00 PM</div>
+            </div>
+            <div class="lineup-card"><span class="lineup-emoji">🎵</span>
+                <div class="lineup-name">Sonido Local</div>
+                <div class="lineup-genre">Cumbia / Tropical</div>
+                <div class="lineup-time-badge">Viernes 25 — 7:00 PM</div>
+            </div>
+            <div class="lineup-card"><span class="lineup-emoji">💃</span>
+                <div class="lineup-name">Grupo Versátil</div>
+                <div class="lineup-genre">Versátil / Covers</div>
+                <div class="lineup-time-badge">Sábado 26 — 6:00 PM</div>
+            </div>
+            <div class="lineup-card"><span class="lineup-emoji">🎻</span>
+                <div class="lineup-name">Mariachi</div>
+                <div class="lineup-genre">Mariachi Tradicional</div>
+                <div class="lineup-time-badge">Viernes 25 — 6:00 AM</div>
+            </div>
+        </div>
+    </section>
+    -->
+
+
 
     <section class="cta-section" id="contacto">
         <h2 class="cta-title">¡TE ESPERAMOS EN LA FIESTA!</h2>
         <p class="cta-text">San Marcos Cerro Gordo te abre las puertas. Ven con tu familia, tus amigos y vive la
             tradición.</p>
-        <a href="#" class="cta-btn">📍 ¿Cómo Llegar?</a>
-    </section>
 
-    -->
+    </section>
 
     <footer class="footer">
         <p>Fiesta Patronal <strong>San Marcos 2026</strong> — Organizada por la Mayordomía de San Marcos Cerro Gordo,
